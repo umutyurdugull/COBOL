@@ -13,3 +13,8 @@ PIC 9(N) ->N basamaklı bir sayı
 Tek karakter tutar
 
 PIC X(4) --> 4 karakter tutar
+
+
+77 Seviyesi (Bağımsız Değişkenler): Hiçbir hiyerarşiye (struct'a) ait olmayan, tek başına duran basit değişkenlerdir (örneğin basit bir i sayacı). Sadece Working-Storage içinde kullanılır.
+
+88 Seviyesi (Condition Names - Mantıksal Değerler / Enumlar): Bir değişkenin alabileceği spesifik bir değeri isimlendirmek için kullanılır. Modern dillerdeki boolean (True/False) veya Enum yapılarına çok benzer.

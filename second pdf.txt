@@ -1,0 +1,127 @@
+Sağladığınız belgeyi inceledim. "COBOL Programming Course" isimli eğitim materyalinde yer alan konular ana başlıklar ve alt başlıklar halinde aşağıda listelenmiştir:
+
++ **1. Neden COBOL? (Why COBOL?)**
+
++ COBOL nedir ve günümüzde nasıl kullanılmaktadır?
+
+
++ Open Mainframe Project COBOL Çalışma Grubu'nun anket sonuçları ve COBOL'u önemseme nedenleri.
+
+
+
+
++ **2. Temel COBOL (Basic COBOL)**
+
++* COBOL'un özellikleri, kodlama kuralları ve program yapısı.
+
+
++* COBOL bölümleri (Identification, Environment, Data, Procedure Divisions).
+
+
++* Zowe CLI ve Otomasyon laboratuvar çalışmaları.
+
+
+
+
+* **3. Veri Bölümü (Data division)**
+
++* Değişkenler, veri öğeleri ve PICTURE (PIC) yan tümcesi.
+
+
+* Sabit değerler (Literals), veri seviyeleri, MOVE ve COMPUTE komutları.
+
+
+
+
+* **4. Tablo İşlemleri (Table handling)**
+
+* Tablo tanımlama, tablodaki öğelere başvurma ve tabloya veri yükleme.
+
+
+* Değişken uzunluklu tablolar ve tablolarda arama yapma (Sıralı ve İkili arama).
+
+
+
+
+* **5. Dosya İşlemleri (File handling)**
+
+* Sıralı (sequential) dosya işlemleri için kullanılan COBOL kodları (Girdi/Çıktı, FILE-CONTROL).
+
+
+* Kayıtları ardışık olarak okuma ve yazma teknikleri.
+
+
+
+
+* **6. Program Yapısı (Program structure)**
+
+* Yapısal programlama ve Prosedür Bölümünün (Procedure Division) akış yapısı.
+
+
+* Kod blokları olarak paragrafların tasarımı ve PERFORM komutlarıyla (TIMES, THROUGH, UNTIL, VARYING) program kontrolü.
+
+
+* Alt programların (subprograms) ve kopya kitaplarının (copybooks) kullanımı.
+
+
+
+
+* **7. Dosya Çıktısı (File output)**
+
+* Çıktı yazma sürecinin incelenmesi (ENVIRONMENT DIVISION, FILE DESCRIPTOR).
+
+
+* Rapor ve sütun başlıklarının formatlanması.
+
+
+
+
+* **8. Koşullu İfadeler (Conditional expressions)**
+
+* Mantıksal (Boolean) operatörler, işlenenler ve koşul durumları.
+
+
+* IF, EVALUATE, PERFORM ve SEARCH gibi koşullu ifade komutları.
+
+
+
+
+* **9. Aritmetik İfadeler (Arithmetic expressions)**
+
+* Aritmetik operatörler, işlem öncelik kuralları (parantez kullanımı) ve kısıtlamalar.
+
+
+* Aritmetik ifade operandları ve boyutları.
+
+
+
+
+* **10. Veri Türleri (Data types)**
+
+* Sayısal değerler ve metin temsilleri (EBCDIC ve ASCII).
+
+
+* COBOL DISPLAY ve COMPUTATIONAL (COMP-1, COMP-2, COMP-3 vb.) veri formatlarının karşılaştırması.
+
+
+
+
+* **11. Yerleşik İşlevler (Intrinsic functions)**
+
+* Yerleşik işlevlerin sözdizimi ve kategorileri (Matematiksel, İstatistiksel, Tarih/saat, Finansal, Karakter işleme).
+
+
+
+
+* **12. ABEND (Anormal Sonlanma) Yönetimi (ABEND handling)**
+
+* ABEND oluşma nedenleri ve sık karşılaşılan ABEND türleri (S001, S013, S0C1, S0C4, S0C7, S0CB, S222/S322, S806, B37/D37/E37).
+
+
+* Hatalardan kaçınmak için en iyi uygulamalar ve ABEND rutinleri.
+
+
+
+
+
+Dosyadaki tüm konuları genel hatlarıyla listeledim. Bir sonraki adım için sizden haber bekliyorum.

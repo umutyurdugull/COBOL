@@ -10,6 +10,12 @@
       * I didn't added anything here for now. 
        
        WORKING-STORAGE SECTION.
+
+
+      
+      
+
+
        01  MUSTERI-KAYDI.
       * 01 STRUCT NAME
       
@@ -50,6 +56,6 @@
            DISPLAY "MUSTERI BAKIYE :           "     MUSTERI-BAKIYE.
            DISPLAY "DURUM KODU     :           "     DURUM-KODU.
            DISPLAY "SISTEM MESAJ   :           "     GECICI-MESAJ.
-
+           
            STOP RUN.
        

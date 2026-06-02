@@ -1,0 +1,15 @@
+{
+  "name": "mainframe",
+  "version": "1.0.0",
+  "description": "Automation for COBOL Program",
+  "license": "ISC",
+  "author": "Umut Yurdugül",
+  "type": "commonjs",
+  "main": "index.js",
+  
+  "scripts": {
+  
+    "clg":"zowe jobs submit ds 'Z88116.JCL(HELLO)'-d . "
+
+  }
+}

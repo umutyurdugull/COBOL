@@ -1,0 +1,16 @@
+       IDENTIFICATION DIVISION.
+           PROGRAM-ID. DATAS.
+           AUTHOR. UMUT-YURDUGUL.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 TEXT-DATA PIC X(13).
+       01 NUMBER-TEST PIC X(2).
+
+
+
+
+
+       PROCEDURE DIVISION.
+
+       

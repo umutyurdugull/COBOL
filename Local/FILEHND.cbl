@@ -12,8 +12,20 @@
                   ORGANIZATION IS LINE SEQUENTIAL.
            SELECT OUTPUT-FILE ASSIGN TO "NOTLAR.TXT"
                   ORGANIZATION IS LINE SEQUENTIAL.  
+
+           SELECT OGRENCI-DOSYASI ASSIGN TO "NOTLAR.DAT"
+                 ORGANIZATION IS INDEXED
+                 ACCESS MODE IS DYNAMIC
+                 RECORD KEY IS I-OGR-ID
+                 FILE STATUS IS WS-DURUM.
+            
        DATA DIVISION.
        FILE SECTION.
+       FD  OGRENCI-DOSYASI.
+       01  INDEXLI-SATIR.
+           05 I-OGR-ID    PIC 9(3).
+           05 I-OGR-AD    PIC X(15).
+           05 I-OGR-NOT   PIC 9(3).
        FD OUTPUT-FILE.
        01  OUTPUT-SATIR.
            05 O-OGR-ID    PIC 9(3).
@@ -25,6 +37,7 @@
            05 D-OGR-AD    PIC X(15).
            05 D-OGR-NOT   PIC 9(3).
        WORKING-STORAGE SECTION.
+       01  WS-DURUM       PIC XX.
       *DOSYA SONU BAYRAK
        01  DOSYA-DURUMU   PIC X VALUE 'H'.
            88 DOSYA-BITTI VALUE 'E'.       
@@ -38,10 +51,13 @@
            PERFORM 000-MAIN-CONTROL.
        
        000-MAIN-CONTROL.
-           PERFORM 400-ADD-DATA.
+           
            PERFORM 100-OPEN-FILE.           
            PERFORM 200-WRITE-DATA.
            PERFORM 300-DISPLAY-DATA.
+           PERFORM 400-ADD-DATA-HARD.
+           PERFORM 500-INPUT-DATA.
+
 
        100-OPEN-FILE.
            OPEN INPUT  INPUT-DATA.
@@ -71,10 +87,34 @@
            END-PERFORM.
            STOP RUN.
 
-       400-ADD-DATA.
+       400-ADD-DATA-HARD.
            OPEN EXTEND OUTPUT-FILE.
            MOVE 105 TO O-OGR-ID.
            MOVE "UMUT YURDUGUL" TO O-OGR-AD.
            MOVE 100             TO O-OGR-NOT.
            WRITE OUTPUT-SATIR.
            CLOSE OUTPUT-FILE.
+       500-INPUT-DATA.
+           OPEN EXTEND OUTPUT-FILE.
+           DISPLAY "ID : ".
+           ACCEPT O-OGR-ID.
+           DISPLAY "AD : ".
+           ACCEPT O-OGR-AD.
+           DISPLAY "NOT : ".
+           ACCEPT O-OGR-NOT.
+           WRITE OUTPUT-SATIR.
+           CLOSE OUTPUT-FILE.
+       600-DELETE-DATA.
+           OPEN I-O OGRENCI-DOSYASI.
+           DISPLAY "SILINECEK ID GIRIN: ".
+           ACCEPT I-OGR-ID.
+
+           DELETE OGRENCI-DOSYASI RECORD
+              INVALID KEY 
+                 DISPLAY "HATA KODU : " WS-DURUM
+              NOT INVALID KEY 
+                 DISPLAY "OGRENCI SILINDI"
+           END-DELETE.
+
+           CLO   SE OGRENCI-DOSYASI.
+              

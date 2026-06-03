@@ -116,5 +116,5 @@
                  DISPLAY "OGRENCI SILINDI"
            END-DELETE.
 
-           CLO   SE OGRENCI-DOSYASI.
+           CLOSE OGRENCI-DOSYASI.
               

@@ -1,56 +1,3 @@
-Sağladığınız belgeyi inceledim. "COBOL Programming Course" isimli eğitim materyalinde yer alan konular ana başlıklar ve alt başlıklar halinde aşağıda listelenmiştir:
-
-+ **1. Neden COBOL? (Why COBOL?)**
-
-+ COBOL nedir ve günümüzde nasıl kullanılmaktadır?
-
-
-+ Open Mainframe Project COBOL Çalışma Grubu'nun anket sonuçları ve COBOL'u önemseme nedenleri.
-
-
-
-
-+ **2. Temel COBOL (Basic COBOL)**
-
-+* COBOL'un özellikleri, kodlama kuralları ve program yapısı.
-
-
-+* COBOL bölümleri (Identification, Environment, Data, Procedure Divisions).
-
-
-+* Zowe CLI ve Otomasyon laboratuvar çalışmaları.
-
-
-
-
-* **3. Veri Bölümü (Data division)**
-
-+* Değişkenler, veri öğeleri ve PICTURE (PIC) yan tümcesi.
-
-
-* Sabit değerler (Literals), veri seviyeleri, MOVE ve COMPUTE komutları.
-
-
-
-
-* **4. Tablo İşlemleri (Table handling)**
-
-* Tablo tanımlama, tablodaki öğelere başvurma ve tabloya veri yükleme.
-
-
-* Değişken uzunluklu tablolar ve tablolarda arama yapma (Sıralı ve İkili arama).
-
-
-
-
-* **5. Dosya İşlemleri (File handling)**
-
-* Sıralı (sequential) dosya işlemleri için kullanılan COBOL kodları (Girdi/Çıktı, FILE-CONTROL).
-
-
-* Kayıtları ardışık olarak okuma ve yazma teknikleri.
-
-
 
 
 * **6. Program Yapısı (Program structure)**
@@ -120,8 +67,3 @@ Sağladığınız belgeyi inceledim. "COBOL Programming Course" isimli eğitim m
 
 * Hatalardan kaçınmak için en iyi uygulamalar ve ABEND rutinleri.
 
-
-
-
-
-Dosyadaki tüm konuları genel hatlarıyla listeledim. Bir sonraki adım için sizden haber bekliyorum.

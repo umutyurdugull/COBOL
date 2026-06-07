@@ -26,22 +26,23 @@
       
 
        WORKING-STORAGE SECTION.
-       01  WS-MENU-CHOICE       PIC 9.
-       01  WS-EXIT-FLAG         PIC X.
-       01  WS-SEARCH-ACC-NO     PIC 9(6).
-       01  WS-FOUND-INDEX       PIC 9(4).
-       01  WS-ACCOUNT-FOUND     PIC X.
+       01  WS-MENU-CHOICE          PIC 9.
+       01  WS-EXIT-FLAG            PIC X.
+       01  WS-SEARCH-ACC-NO        PIC 9(6).
+       01  WS-FOUND-INDEX          PIC 9(4).
+       01  WS-ACCOUNT-FOUND        PIC X.
       *    Y N
-       01  WS-AMOUNT            PIC 9(7)V99.
-       01  WS-WITHDRAW-COUNT    PIC 9(5).
-       01 WS-NEW-NAME PIC X(20).
-       01  WS-DEPOSIT-TOTAL     PIC 9(9)V99.
-       01  WS-WITHDRAW-TOTAL    PIC 9(9)V99.
-       01  WS-ACCOUNT-COUNT     PIC 9(4)       VALUE ZERO.
-       01  DEPOSIT-COUNT        PIC 9(4).   
-       01  TOTAL-DEPOSIT-COUNT  PIC 9(5).      
+       01  WS-AMOUNT               PIC 9(7)V99.
+       01  WS-WITHDRAW-COUNT       PIC 9(5).
+       01 WS-NEW-NAME              PIC X(20).
+       01  WS-DEPOSIT-TOTAL        PIC 9(9)V99    VALUE ZERO.
+       01  WS-WITHDRAW-TOTAL       PIC 9(9)V99    VALUE ZERO.
+       01  WS-ACCOUNT-COUNT        PIC 9(4)       VALUE ZERO.
+       01  DEPOSIT-COUNT           PIC 9(4).      
+       01  TOTAL-DEPOSIT-COUNT     PIC 9(5)       VALUE ZERO.  
       * UPDATE DEPOSIT STATS KISMINDA SADECE DEPOSIT ADETI GUNCELLENECEK
-
+       01  TOTAL-WITHDRAW-COUNT    PIC 9(5)       VALUE ZERO.
+       01  WS-NET-FLOW             PIC S9(9)V99   VALUE ZERO.
 
        01  ACCOUNT-TABLE.
            05 ACCOUNT-ENTRY OCCURS 100 TIMES
@@ -76,20 +77,19 @@
                ACCEPT WS-MENU-CHOICE
                DISPLAY " SELECTED  OPTION: " WS-MENU-CHOICE 
                EVALUATE WS-MENU-CHOICE
-
                    WHEN 1
                        PERFORM SEARCH-ACCOUNT
-
                    WHEN 2
                        PERFORM ADD-ACCOUNT
-
                    WHEN 3
                        PERFORM DEPOSIT-MONEY
-
                    WHEN 4
+                       PERFORM WITHDRAW-MONEY
+                   WHEN 5
                        PERFORM SAVE-ACCOUNTS
                        MOVE "Y" TO WS-EXIT-FLAG
-
+                   WHEN 6
+                       PERFORM END-DAY-REPORT
                END-EVALUATE
 
            END-PERFORM.
@@ -132,10 +132,13 @@
        
 
        DISPLAY-MENU.
+
            DISPLAY "1 SEARCH ACCOUNT".
            DISPLAY "2 ADD ACCOUNT   ".
            DISPLAY "3 DEPOSIT MONEY".
-           DISPLAY "4 SAVE ACCOUNTS ".
+           DISPLAY "4 WITHDRAW MONEY".
+           DISPLAY "5 SAVE ACCOUNTS ".
+           DISPLAY "6 END DAY REPORT".
 
 
        SEARCH-ACCOUNT.
@@ -162,7 +165,6 @@
       *
 
        ADD-ACCOUNT.
-
            ACCEPT WS-SEARCH-ACC-NO
            ACCEPT WS-NEW-NAME
            ACCEPT WS-AMOUNT
@@ -181,23 +183,16 @@
        
            MOVE 0 TO ACC-DEPOSIT-COUNT(WS-ACCOUNT-COUNT)
            MOVE 0 TO ACC-WITHDRAW-COUNT(WS-ACCOUNT-COUNT)
+           
+           
+           IF WS-AMOUNT > 0
+               ADD 1 TO TOTAL-DEPOSIT-COUNT
+               ADD WS-AMOUNT TO WS-DEPOSIT-TOTAL
+           END-IF
        
            DISPLAY "ACCOUNT ADDED"
-           DISPLAY "TOTAL ACCOUNTS: " WS-ACCOUNT-COUNT.
+           DISPLAY "TOTAL ACCOUNTS IN MEMORY IS NOW: " WS-ACCOUNT-COUNT.
        
-           EXIT PARAGRAPH.
-
-
-
-           MOVE WS-SEARCH-ACC-NO TO ACC-NO(WS-ACCOUNT-COUNT)
-
-           MOVE WS-NEW-NAME      TO ACC-NAME(WS-ACCOUNT-COUNT)
-
-           MOVE WS-AMOUNT        TO ACC-BALANCE(WS-ACCOUNT-COUNT)
-           MOVE WS-AMOUNT        TO ACC-BALANCE(WS-ACCOUNT-COUNT)
-
-           DISPLAY "ACCOUNT ADDED"
-           DISPLAY " TOTAL ACCOUNTS IN MEMORY IS NOW: " WS-ACCOUNT-COUNT 
            EXIT PARAGRAPH.
 
        FIND-ACCOUNT.
@@ -215,17 +210,46 @@
            END-IF
 
            END-PERFORM.
+       WITHDRAW-MONEY.
+           ACCEPT WS-SEARCH-ACC-NO
+           PERFORM FIND-ACCOUNT
+           IF WS-ACCOUNT-FOUND = "Y"
+              ACCEPT WS-AMOUNT
+           
+              IF ACC-BALANCE(WS-FOUND-INDEX) >= WS-AMOUNT
+                 SUBTRACT WS-AMOUNT FROM ACC-BALANCE(WS-FOUND-INDEX)
+                 DISPLAY "WITHDRAW SUCCESS"
+                 PERFORM UPDATE-WITHDRAW-STATS
+                 DISPLAY ACC-BALANCE(WS-FOUND-INDEX)
+              ELSE
+                 DISPLAY "INSUFFICIENT BALANCE"
+              END-IF
+           
+           ELSE
+              DISPLAY "ACCOUNT NOT FOUND"
+           END-IF.
+
+       UPDATE-WITHDRAW-STATS.
+           ADD 1 TO TOTAL-WITHDRAW-COUNT.
+           ADD 1 TO ACC-WITHDRAW-COUNT(WS-FOUND-INDEX).
+           ADD WS-AMOUNT TO WS-WITHDRAW-TOTAL.
+
 
        DEPOSIT-MONEY.
                  ACCEPT WS-SEARCH-ACC-NO
-                 PERFORM FIND-ACCOUNT.
-
+                 PERFORM FIND-ACCOUNT
+                 
                  IF WS-ACCOUNT-FOUND = "Y"
                     ACCEPT WS-AMOUNT
-                    ADD WS-AMOUNT TO ACC-BALANCE(WS-FOUND-INDEX)
+                    IF WS-AMOUNT > 0
+                          ADD WS-AMOUNT TO ACC-BALANCE(WS-FOUND-INDEX)
                           DISPLAY "DEPOSIT SUCCES"
-                    PERFORM UPDATE-DEPOSIT-STATS
-                    DISPLAY ACC-BALANCE(WS-FOUND-INDEX)
+                          PERFORM UPDATE-DEPOSIT-STATS
+                          DISPLAY ACC-BALANCE(WS-FOUND-INDEX)
+                    ELSE
+                          DISPLAY "YOU CANT DEPOSIT NEGATIVE MONEY"
+                    END-IF
+                    
                  ELSE
                     DISPLAY "ACCOUNT NOT FOUND"
                  END-IF.
@@ -236,7 +260,7 @@
 
            ADD 1 TO TOTAL-DEPOSIT-COUNT.
            ADD 1 TO ACC-DEPOSIT-COUNT(WS-FOUND-INDEX).
-
+           ADD WS-AMOUNT TO WS-DEPOSIT-TOTAL.
 
        SAVE-ACCOUNTS.
 
@@ -258,4 +282,23 @@
            CLOSE ACCOUNTS-FILE.
        
            DISPLAY "--- LOG: SUCCESSFULLY WRITTEN ".
+       END-DAY-REPORT.
+      * TOTAL WITHDRAW COUNTS + TOTAL DEPOSIT COUNTS 
+      * TOTAL MONEY WITHDRAWN
+      * TOTAL MONEY DEPOSITED
+      * JUST DISPLAYING NOTHING ELSE. 
+      *Total deposit count
+      *Total withdraw count
+      *Total deposit amount
+      *Total withdraw amount
+      *Net flow (deposit - withdraw)
+           DISPLAY "--- END OF DAY REPORT ---"
+           DISPLAY "TOTAL DEPOSIT COUNT  : " TOTAL-DEPOSIT-COUNT
+           DISPLAY "TOTAL WITHDRAW COUNT : " TOTAL-WITHDRAW-COUNT
+           DISPLAY "TOTAL DEPOSIT AMOUNT : " WS-DEPOSIT-TOTAL
+           DISPLAY "TOTAL WITHDRAW AMOUNT: " WS-WITHDRAW-TOTAL
            
+           COMPUTE WS-NET-FLOW = WS-DEPOSIT-TOTAL - WS-WITHDRAW-TOTAL
+           
+           DISPLAY "NET FLOW (DEP - W/D) : " WS-NET-FLOW.
+           EXIT PARAGRAPH.

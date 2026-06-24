@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "COBOL Debug (GDB)",
+            "type": "gnucobol",
+            "request": "launch",
+            "program": "${workspaceFolder}/EXTHRU.exe",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": true,
+            "preLaunchTask": "cobol-build"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGRA2.
+
+      
+       DATA DIVISION.
+       LINKAGE SECTION.
+       01  LK-NUM1  PIC 9(3).
+       01  LK-NUM2  PIC 9(3).
+       01  LK-SUM   PIC 9(4).
+       
+
+
+       PROCEDURE DIVISION USING LK-NUM1, LK-NUM2,LK-SUM.
+           COMPUTE LK-SUM = LK-NUM1 + LK-NUM2
+           EXIT PROGRAM.

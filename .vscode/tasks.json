@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cobol-build",
+            "type": "shell",
+            "command": "cobc",
+            "args": [
+                "-x",
+                "-g",
+                "EXTHRU.cbl"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

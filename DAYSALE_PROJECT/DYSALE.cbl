@@ -1,0 +1,52 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. DYSALE.
+       AUTHOR. UMUT-YURDUGUL.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       
+
+      *    I'LL MIGRATE IT INTO MAINFRAME WHEN PROJECT ENDS.
+      *    PROJECT WILL WORK ON LOCAL WITH GNUCOBOL FOR WHILE AND .DAT FILES
+      *    I'LL ALSO USE IBMDB2 AND GOFRAME WITH IT :)
+      *    INITAL COMMIT 24.06.2026 03:58 UTC +3
+
+
+           SELECT SALES-FILE ASSIGN TO "SALES.DAT"
+               ORGANIZATION IS LINE SEQUENTIAL.
+               
+      
+           SELECT VALID-SALES-FILE ASSIGN TO "VALID.DAT"
+               ORGANIZATION IS LINE SEQUENTIAL.
+       
+           SELECT ERROR-FILE ASSIGN TO "ERROR.LOG"
+               ORGANIZATION IS LINE SEQUENTIAL.
+               
+      
+           SELECT REPORT-FILE ASSIGN TO "REPORT.TXT"
+               ORGANIZATION IS LINE SEQUENTIAL.
+     
+           SELECT SORT-FILE ASSIGN TO "SORT.WRK".
+           
+
+           
+       
+
+       DATA DIVISION.
+       FILE SECTION.
+       
+       FD  SALES-FILE.
+       01  SALES-RECORD.
+           05    IN-CUST-ID              PIC X(5).
+           05    IN-CATEGORY             PIC X(10).
+           05    IN-QUANTITY             PIC 9(3).
+           05    IN-UNIT-PRICE           PIC 9(4)V99.
+       
+
+      * FD   VALID-SALES-FILE.
+      * 01   VALID-RECORD.
+
+
+
+       PROCEDURE DIVISION.

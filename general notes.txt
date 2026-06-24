@@ -1,0 +1,13 @@
+Bir tavsiye:
+
+Sen şu anda Open Mainframe Project üzerinden gidiyorsan, CICS + VSAM + JCL + COBOL + Db2 stack’ini öğrenmeye çalış.
+
+Sadece COBOL syntax öğrenmek yeterli değil.
+
+Mainframe dünyasında asıl değer:
+
+COBOL + JCL + z/OS ecosystem
+
+birlikte geliyor.
+
+Bu projeyi bitirirsen Türkiye’de birçok yeni mezunun CV’sinden teknik olarak ayrışırsın.

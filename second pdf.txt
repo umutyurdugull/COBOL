@@ -67,3 +67,17 @@
 
 * Hatalardan kaçınmak için en iyi uygulamalar ve ABEND rutinleri.
 
+
+
+
+
+Aslında basic ingilizce konuşur gibi olan bir programlama dili. işlemi 10 defa yapmak istiyorum diyelim ki 
+    PERFORM 10 TIMES
+        YAPMAK ISTEDIGIM İŞLEM 
+    END-PERFORM. 
+şeklinde bir kod yazıyorum ve ne yapmak istediğimi açık bir şekilde belirterek kodumu yazıyorum.
+
+PERFORM MY-NEW-PARAGRAPH COUNTER TIMES.
+
+
+

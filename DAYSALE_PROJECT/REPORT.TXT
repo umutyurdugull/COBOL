@@ -1,0 +1,25 @@
+=======================================================
+                 DAILY SALES REPORT
+=======================================================
+CUST ID   CATEGORY      PAID AMOUNT   STATUS
+-------   ----------    -----------   -------
+C0005     ELECTRONIC    $  3,600.00    VIP SALE
+C0006     ELECTRONIC    $  3,600.00    VIP SALE
+C0001     ELECTRONIC    $    270.90    STANDARD
+=======================================================
+TOTAL RECORDS PROCESSED:     3
+TOTAL SALES AMOUNT     :      $7,470.90
+=======================================================
+=======================================================
+                 DAILY SALES REPORT
+=======================================================
+CUST ID   CATEGORY      PAID AMOUNT   STATUS
+-------   ----------    -----------   -------
+C0005     ELECTRONIC    $  3,600.00    VIP SALE
+C0001     ELECTRONIC    $    270.90    STANDARD
+C0003     FOOD          $    150.00    STANDARD
+C0002     CLOTHING      $     80.00    STANDARD
+=======================================================
+TOTAL RECORDS PROCESSED:     4
+TOTAL SALES AMOUNT     :      $4,100.90
+=======================================================

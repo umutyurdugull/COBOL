@@ -35,7 +35,7 @@
         01  VALID-RECORD. 
             05    VAL-CUST-ID             PIC X(5).
             05    VAL-CATEGORY            PIC X(10).
-            05    VAL-DISC-PRICE          PIC 9(6)V99.
+            05    VAL-DISC-PRICE          PIC 9(7)V99.
        
         FD  ERROR-FILE
             RECORDING MODE F.
@@ -51,11 +51,11 @@
         01  SORT-RECORD.
             05  SRT-CUST-ID               PIC X(5).
             05  SRT-CATEGORY              PIC X(10).
-            05  SRT-DISC-PRICE            PIC 9(6)V99.
+            05  SRT-DISC-PRICE            PIC 9(7)V99.
 
         WORKING-STORAGE SECTION.
         01  WS-EOF-FLAG                   PIC X(1) VALUE 'N'.
-        01  WS-TOTAL-PRICE                PIC 9(6)V99.
+        01  WS-TOTAL-PRICE                PIC 9(7)V99.
         01  WS-REPORT-COUNTERS            PIC 9(4) VALUE ZERO.
         01  WS-FINAL-TOTAL                PIC 9(7)V99 VALUE ZERO.
 

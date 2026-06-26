@@ -1,0 +1,8 @@
+Create a C# Console Project for the demo.
+Get the report,valid,error log etc. data's.
+Return it to user.
+Add Data --> Get input from user and send it into mainframe.
+Add it into the dataset.
+Run the JCL again. 
+
+After we done with the console, migrate it into asp.net core mvc.

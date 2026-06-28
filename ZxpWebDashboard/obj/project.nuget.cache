@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ayztKeFd5tQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\COBOL\\ZxpWebDashboard\\ZxpWebDashboard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\dotnetframe\\1.0.4\\dotnetframe.1.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ZXP Web Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-terminal logo-icon"></i>
+                <div class="logo-text">
+                    <span class="text-neon">ZXP</span> Portal
+                    <span class="sub-text">Mainframe Modernization</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-tab="datasets">
+                    <i class="fa-solid fa-folder-open"></i> Datasets Explorer
+                </button>
+                <button class="nav-btn" data-tab="jcl-runner">
+                    <i class="fa-solid fa-play"></i> JCL Job Submitter
+                </button>
+                <button class="nav-btn" data-tab="sql-console">
+                    <i class="fa-solid fa-database"></i> Db2 SQL Console
+                </button>
+                <button class="nav-btn" data-tab="job-queue">
+                    <i class="fa-solid fa-list-check"></i> Jobs Queue
+                </button>
+                <button class="nav-btn" data-tab="settings">
+                    <i class="fa-solid fa-gears"></i> Connection Settings
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-status-card">
+                    <div class="status-indicator online"></div>
+                    <div class="user-info">
+                        <span class="username" id="sidebar-username">Z88116</span>
+                        <span class="role">Mainframe Developer</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- Header bar -->
+            <header class="main-header">
+                <div class="header-left">
+                    <h1 class="page-title" id="page-title">Datasets Explorer</h1>
+                </div>
+                <div class="header-right">
+                    <div class="connection-pill">
+                        <i class="fa-solid fa-network-wired text-neon"></i>
+                        <span class="url-text" id="header-connection-url">https://204.90.115.200:10443</span>
+                        <span class="status-badge">CONNECTED</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

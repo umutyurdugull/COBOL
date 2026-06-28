@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "ZxpWebDashboard/1.0.0": {
+        "dependencies": {
+          "DotNetFrame": "1.0.4"
+        },
+        "runtime": {
+          "ZxpWebDashboard.dll": {}
+        }
+      },
+      "DotNetFrame/1.0.4": {
+        "runtime": {
+          "lib/net10.0/NetFrame.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ZxpWebDashboard/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DotNetFrame/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y/edKXJ1EEmYb+usXvK/cJewvxl4HwBFOVPlHpWifMU+5+0PQZe32nzjOBCjESAVSxBUppiNnRZlJpV+lTVPKQ==",
+      "path": "dotnetframe/1.0.4",
+      "hashPath": "dotnetframe.1.0.4.nupkg.sha512"
+    }
+  }
+}

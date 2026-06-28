@@ -1,0 +1,155 @@
+[
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "GetConnectionDetails",
+    "RelativePath": "api/Mainframe/connection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "GetContent",
+    "RelativePath": "api/Mainframe/content",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datasetName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "memberName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "SaveContent",
+    "RelativePath": "api/Mainframe/content",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ZxpWebDashboard.Controllers.SaveContentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "ListDatasets",
+    "RelativePath": "api/Mainframe/datasets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dsLevel",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "GetJobOutput",
+    "RelativePath": "api/Mainframe/job-output",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "jobId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "GetJobStatus",
+    "RelativePath": "api/Mainframe/job-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "jobId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "ListMembers",
+    "RelativePath": "api/Mainframe/members",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datasetName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "RunSql",
+    "RelativePath": "api/Mainframe/run-sql",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ZxpWebDashboard.Controllers.RunSqlRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZxpWebDashboard.Controllers.MainframeController",
+    "Method": "SubmitJob",
+    "RelativePath": "api/Mainframe/submit-job",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ZxpWebDashboard.Controllers.SubmitJclRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

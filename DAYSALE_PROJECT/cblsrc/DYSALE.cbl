@@ -7,7 +7,10 @@
         FILE-CONTROL.
             SELECT SALES-FILE ASSIGN TO SALES
                 ORGANIZATION IS SEQUENTIAL.
-                
+      * I need to rewrite the system for Db2 databases.
+      * We're so cooked. 
+      * I wish I did all of it at the beginning
+      * But now, it's too late.          
             SELECT VALID-SALES-FILE ASSIGN TO VALIDSAL
                 ORGANIZATION IS SEQUENTIAL.
         

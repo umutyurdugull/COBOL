@@ -19,7 +19,7 @@ namespace DAYSALE
             string dbURL = "http://204.90.115.200:5040";
             string username = "Z88116";
             string password = "";
-            string dbName = "";
+            string dbName = "Z88116";
 
             var services = new ServiceCollection();
             services.AddLogging(builder =>

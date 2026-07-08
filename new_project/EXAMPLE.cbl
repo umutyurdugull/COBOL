@@ -1,6 +1,0 @@
-       IDENTIFICATION DIVISION.
-       PROGRAM-ID. EXAMPLE.
-       AUTHOR.     UMUT-YURDUGUL.
-
-
-       

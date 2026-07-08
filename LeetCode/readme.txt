@@ -1,0 +1,1 @@
+I don't have any idea for building. So I'm just gonna solve couple algorithm questions using COBOL.

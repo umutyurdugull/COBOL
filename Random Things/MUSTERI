@@ -1,0 +1,3 @@
+       01  MUSTERI-VERI.
+           05 MUSTERI-ID              PIC 9(5).
+           05 MUSTERI-ISIM            PIC X(20).

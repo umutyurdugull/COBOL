@@ -1,0 +1,25 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MAIN.
+
+
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+
+       COPY MUSTERI.
+
+
+       PROCEDURE DIVISION.
+
+
+
+
+       0000-MAIN-PROGRAM.
+           MOVE 12345                 TO MUSTERI-ID 
+           MOVE "UMUT YURDUGUL"       TO MUSTERI-ISIM
+
+           DISPLAY "ID : "   MUSTERI-ID
+           DISPLAY "ISIM : " MUSTERI-ISIM
+           STOP RUN.
+

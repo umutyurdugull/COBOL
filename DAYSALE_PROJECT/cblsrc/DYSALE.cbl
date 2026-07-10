@@ -257,7 +257,7 @@
        4050-FETCH-REPORT-DATA.
            EXEC SQL
                FETCH VALID_SALES_CUR
-               INTO :DB-VAL-CUST-ID, :DB-VAL-CATEGORY, :DB-VAL-DISC-PRICE
+               INTO :DB-VAL-CUST-ID, :DB-VAL-CATEGORY,:DB-VAL-DISC-PRICE
            END-EXEC.
             
            IF SQLCODE = 100
